@@ -1,0 +1,30 @@
+version: '3.9'
+
+# Define network
+networks:
+  laravel-app-networks:
+    driver:
+      bridge
+
+services:
+  # Mysql DB Service
+  db:
+    image: mysql # For define specific version mysql:version
+    container_name: db # Container name
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+    volumes:
+      # Using any option for volume mounting mentioned below
+      - maria-db-data:/var/lib/mysql # This will store
+      # - ./docker/maria-db-data:/var/lib/mysql # this will store into root directory of mysql-data folder
+    networks:
+      - laravel-app-networks
+
+# Define Volume for mysql to persist the data
+volumes:
+  maria-db-data:
