@@ -48,7 +48,26 @@ services:
     ports:
       - "8200:80"
     volumes:
+      - ./project:/var/www/html
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - laravel-app-networks
+
+  # PHP Service
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    image: php
+    container_name: php
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html
+    volumes:
+      - ./project:/var/www/html
     networks:
       - laravel-app-networks
 

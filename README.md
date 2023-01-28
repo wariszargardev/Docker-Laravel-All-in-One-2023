@@ -17,3 +17,26 @@ show databases;
 
 # 2. Php my admin
 ## Username root & password is root
+
+# 3. Nginx
+```
+docker ps
+# Non window system
+docker exec -it container_id bash
+# window
+winpty docker exec -it container_id bash
+cd /var/www/html
+ls 
+```
+
+# 3. PHP
+```
+docker ps
+# Non window system
+docker exec -it container_id bash
+# window
+winpty docker exec -it container_id bash
+go to /var/www/html
+composer install 
+php artisan migrate 
+```
