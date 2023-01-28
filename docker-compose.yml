@@ -39,6 +39,19 @@ services:
     networks:
       - laravel-app-networks
 
+  # Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8200:80"
+    volumes:
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - laravel-app-networks
+
 # Define Volume for mysql to persist the data
 volumes:
   maria-db-data:
