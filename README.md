@@ -3,8 +3,8 @@
 ```
 https://docs.google.com/document/d/1Ux02TLVBbjC5CjbJacUX4RsRDdh-4AGnLoyRQeicWl0/edit?usp=sharing
 ```
-
-##  MYSQL Commands 
+# 1. MYSQL 
+## MYSQL Commands 
 ```
 mysql -u root(mysql root user name) -p
 password: root 
@@ -14,3 +14,6 @@ password: root
 ```
 show databases;
 ```
+
+# 2. Php my admin
+## Username root & password is root

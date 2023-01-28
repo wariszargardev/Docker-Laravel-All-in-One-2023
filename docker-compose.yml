@@ -25,6 +25,20 @@ services:
     networks:
       - laravel-app-networks
 
+  # Phpmyadmin service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+#    platform: linux/amd64 If Mack book M2 then specify platform
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - laravel-app-networks
+
 # Define Volume for mysql to persist the data
 volumes:
   maria-db-data:
