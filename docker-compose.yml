@@ -29,7 +29,8 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
-#    platform: linux/amd64 If Mack book M2 then specify platform
+    restart: always
+    #    platform: linux/amd64 If Mack book M2 then specify platform
     environment:
       PMA_HOST: db
     ports:
