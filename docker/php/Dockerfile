@@ -11,19 +11,19 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN #pecl install mongodb apcu && docker-php-ext-enable mongodb apcu opcache
 
 #Install dependencies
-#RUN apt-get update && apt-get install -y \
-#    build-essential \
-#    libpng-dev \
-#    libjpeg62-turbo-dev \
-#    libfreetype6-dev \
-#    locales \
-#    zip \
-#    jpegoptim optipng pngquant gifsicle \
-#    vim \
-#    unzip \
-#    git \
-#    curl \
-#    libzip-dev
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl \
+    libzip-dev
 
 # Install composer First Way
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

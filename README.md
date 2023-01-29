@@ -40,3 +40,47 @@ go to /var/www/html
 composer install 
 php artisan migrate 
 ```
+
+
+# 4. Laravel
+```
+docker ps
+# Non window system
+docker exec -it php bash
+# window
+winpty docker exec -it php bash
+default /var/www/html
+composer install 
+php artisan migrate 
+
+composer --version 
+
+php --version
+
+Laravel version
+php artisan --version
+
+Install php extension 
+php -m 
+```
+
+##  MYSQL ENV DB
+```
+DB_CONNECTION=mysql
+DB_HOST=db # mysql container name
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+
+## Manually upgarde composer in container
+```
+sudo apt purge composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+```
