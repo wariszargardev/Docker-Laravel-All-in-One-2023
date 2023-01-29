@@ -10,6 +10,9 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Mongo DB extension install
 RUN #pecl install mongodb apcu && docker-php-ext-enable mongodb apcu opcache
 
+# Install Postgre PDO
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
+
 #Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \

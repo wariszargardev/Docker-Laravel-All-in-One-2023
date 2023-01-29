@@ -74,7 +74,6 @@ DB_USERNAME=root
 DB_PASSWORD=root
 ```
 
-
 ## Manually upgarde composer in container
 ```
 sudo apt purge composer
@@ -83,4 +82,21 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a6110855
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
+```
+
+## Postgresql container
+```
+DB_CONNECTION=pgsql
+DB_HOST=postgres
+DB_PORT=5432
+DB_DATABASE=laravel
+DB_USERNAME=postgresql
+DB_PASSWORD=postgresql
+```
+
+# Goto pgsql terminal
+
+```
+psql -d laravel -U postgresql -W
+password= postgresql
 ```
