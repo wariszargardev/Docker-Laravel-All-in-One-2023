@@ -106,3 +106,5 @@ postgresql is user name
 laravel is database
 psql -U postgresql -d laravel -c "SELECT * FROM users"
 ```
+
+## Redis controlelr

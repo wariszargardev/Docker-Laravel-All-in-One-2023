@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cache-set', function () {
+    Cache::set('name', 'Muhammad Waris Zargar');
+});
+
+Route::get('/cache-get', function () {
+    echo Cache::get('name');
+});
+
+
