@@ -97,6 +97,12 @@ DB_PASSWORD=postgresql
 # Goto pgsql terminal
 
 ```
+docker ps 
+docker exec -it contaner_id  bash
 psql -d laravel -U postgresql -W
 password= postgresql
+Run in terminal 
+postgresql is user name 
+laravel is database
+psql -U postgresql -d laravel -c "SELECT * FROM users"
 ```
