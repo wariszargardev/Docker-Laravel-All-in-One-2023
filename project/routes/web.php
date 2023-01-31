@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,11 @@ Route::get('/cache-set', function () {
 
 Route::get('/cache-get', function () {
     echo Cache::get('name');
+});
+
+Route::get('/email-sending', function () {
+    Mail::to("muhammad.waris@pf.com.pk")
+        ->send(new \App\Mail\WelcomeEmailHogMail());
 });
 
 

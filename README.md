@@ -108,3 +108,20 @@ psql -U postgresql -d laravel -c "SELECT * FROM users"
 ```
 
 ## Redis controlelr
+
+
+## Mailhog
+```
+MAIL_ENCRYPTION=null
+MAIL_DRIVER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_FROM_NAME="${APP_NAME}"
+MAIL_FROM_ADDRESS="hello@example.com"
+```
+```
+Visit URL
+http://localhost:8025/
+```

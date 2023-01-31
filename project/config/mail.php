@@ -44,7 +44,18 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
-
+        'mailhog' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
+            'port' => env('MAIL_PORT', 1025),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'from' => [
+                'address' => env('MAIL_FROM_ADDRESS', 'from@example.com'),
+                'name' => env('MAIL_FROM_NAME', 'Example'),
+            ],
+        ],
         'ses' => [
             'transport' => 'ses',
         ],
